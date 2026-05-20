@@ -1,0 +1,51 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           String        @id @default(uuid())
+  name         String
+  email        String        @unique
+  passwordHash String?
+  token        String        @unique
+  credits      Int           @default(3) // 3 créditos grátis no cadastro
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  histories    History[]
+  transactions Transaction[]
+  sessions     Session[]
+}
+
+model Transaction {
+  id                  String   @id @default(uuid())
+  userId              String
+  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  abacatePayCheckoutId String   @unique
+  amount              Int      // Valor em centavos (ex: 1990 = R$19,90)
+  status              String   // PENDING, PAID, FAILED
+  createdAt           DateTime @default(now())
+}
+
+model History {
+  id           String   @id @default(uuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  questionText String?
+  imageUrl     String?  // URL ou base64 da imagem capturada
+  resolution   String   // A resolução em Markdown gerada pela IA
+  createdAt    DateTime @default(now())
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sid       String   @unique // ID de Sessão gerado aleatoriamente e de alta entropia
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
