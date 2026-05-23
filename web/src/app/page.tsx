@@ -33,8 +33,45 @@ export default async function Home() {
   const authPath = user ? "/dashboard" : "/login";
   const primaryBtnText = user ? "Meu Painel de Estudos" : "Começar Grátis (3 Créditos)";
 
+  const softwareApplicationSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Sapienia - Resolutor de Questões IA",
+    "operatingSystem": "Windows, macOS, Linux, ChromeOS",
+    "applicationCategory": "EducationalApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "BRL"
+    },
+    "featureList": "Resolução de questões por imagem/print, Leitura visual matemática avançada, Explicação passo a passo, Histórico de estudos na nuvem"
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <>
+      {/* Dados Estruturados JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* Navbar */}
       <Navbar user={user} />
 
@@ -196,6 +233,9 @@ export default async function Home() {
             <span className="logo-symbol">⚡</span> Sapienia
           </div>
           <div style={{ display: "flex", gap: "20px" }}>
+            <Link href="/blog" style={{ color: "var(--foreground-muted)", textDecoration: "none", fontSize: "0.875rem" }}>
+              Blog/Artigos
+            </Link>
             <Link href="/privacy" style={{ color: "var(--foreground-muted)", textDecoration: "none", fontSize: "0.875rem" }}>
               Política de Privacidade
             </Link>
