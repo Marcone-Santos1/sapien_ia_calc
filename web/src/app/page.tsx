@@ -191,9 +191,14 @@ export default async function Home() {
 
       {/* Footer */}
       <footer className="footer">
-        <div className="container footer-container">
+        <div className="container footer-container" style={{ display: "flex", flexDirection: "column", gap: "10px", alignItems: "center" }}>
           <div className="logo" style={{ cursor: "default" }}>
             <span className="logo-symbol">⚡</span> Sapienia
+          </div>
+          <div style={{ display: "flex", gap: "20px" }}>
+            <Link href="/privacy" style={{ color: "var(--foreground-muted)", textDecoration: "none", fontSize: "0.875rem" }}>
+              Política de Privacidade
+            </Link>
           </div>
           <div className="footer-text">
             © {new Date().getFullYear()} Sapienia. Desenvolvido com AbacatePay e Gemini AI.
