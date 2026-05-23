@@ -12,10 +12,10 @@ export default function Navbar({ user }: NavbarProps) {
           <span className="logo-symbol">⚡</span> Sapienia
         </Link>
         <div className="nav-links">
-          <a href="#recursos" className="nav-link">Recursos</a>
-          <a href="#como-funciona" className="nav-link">Como Funciona</a>
-          <a href="#precos" className="nav-link">Planos</a>
-          <a href="#faq" className="nav-link">FAQ</a>
+          <Link href="/#recursos" className="nav-link">Recursos</Link>
+          <Link href="/#como-funciona" className="nav-link">Como Funciona</Link>
+          <Link href="/#precos" className="nav-link">Planos</Link>
+          <Link href="/#faq" className="nav-link">FAQ</Link>
           <Link href="/blog" className="nav-link">Blog</Link>
           
           {user ? (
