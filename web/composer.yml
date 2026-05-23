@@ -1,0 +1,51 @@
+services:
+  nextjs-resolver-standalone:
+    image: ghcr.io/marcone-santos1/sapien_ia_calc:latest
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    container_name: nextjs-resolver-standalone-container
+    user: "root"
+    environment:
+      NODE_ENV: production
+      PORT: "3001"
+      HOSTNAME: "0.0.0.0"
+
+      # Banco de Dados (Supabase/Postgres)
+      DATABASE_URL: ${DATABASE_URL}
+
+      # Autenticação e Segurança
+      AUTH_URL: ${AUTH_URL}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+
+      # Serviços Financeiros
+      ABACATEPAY_API_KEY: ${ABACATEPAY_API_KEY}
+      ABACATEPAY_URL: ${ABACATEPAY_URL}
+      ABACATEPAY_WEBHOOK_SECRET: ${ABACATEPAY_WEBHOOK_SECRET}
+    ports:
+      - "3001:3001"
+    volumes:
+      - nextjs_cache:/app/.next/cache
+    healthcheck:
+      test: ["CMD", "curl", "-f", "-A", "healthcheck", "http://localhost:3001"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+  postgres:
+    image: postgres:15-alpine
+    container_name: sapienia_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: sapienia
+      POSTGRES_PASSWORD: sapienia_secure_pwd
+      POSTGRES_DB: sapienia_db
+    ports:
+      - '54320:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  nextjs_cache:
+  postgres_data:

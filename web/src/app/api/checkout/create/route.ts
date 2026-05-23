@@ -72,7 +72,7 @@ export async function POST(req: NextRequest) {
     });
 
     // 5. Criar checkout no AbacatePay
-    const domain = req.headers.get('origin') || 'http://localhost:3000';
+    const domain = req.headers.get('origin') || 'http://localhost:3001';
     const checkoutSession = await createCheckoutSession({
       customerId,
       productId,

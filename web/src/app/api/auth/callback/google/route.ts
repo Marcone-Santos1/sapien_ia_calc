@@ -16,7 +16,7 @@ export async function GET(req: NextRequest) {
 
     const clientId = process.env.GOOGLE_CLIENT_ID;
     const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3001';
     const redirectUri = `${appUrl}/api/auth/callback/google`;
 
     if (!clientId || !clientSecret || clientId === 'seu-google-client-id') {
@@ -109,7 +109,7 @@ export async function GET(req: NextRequest) {
     return response;
   } catch (error) {
     console.error('Erro crítico no callback Google OAuth:', error);
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3001';
     return NextResponse.redirect(`${appUrl}/login?error=oauth_failed`);
   }
 }
