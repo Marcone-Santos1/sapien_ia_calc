@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Sapienia - Resolutor de Questões IA",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Selecione uma área da tela ou cole o texto para que a IA resolva e explique detalhadamente a questão.",
   "permissions": [
     "activeTab",
