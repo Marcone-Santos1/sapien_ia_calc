@@ -16,8 +16,12 @@ services:
 
       # Autenticação e Segurança
       AUTH_URL: ${AUTH_URL}
+      NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL}
       GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
       GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+
+      # APIs de IA
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
 
       # Serviços Financeiros
       ABACATEPAY_API_KEY: ${ABACATEPAY_API_KEY}
