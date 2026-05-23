@@ -143,8 +143,8 @@ export default async function Home() {
             </div>
             <div className="step-card">
               <div className="step-num">02</div>
-              <h3>Baixe a Extensão</h3>
-              <p>Conecte a extensão inserindo o seu token com apenas um clique.</p>
+              <h3>Instale a Extensão</h3>
+              <p>Adicione o Sapienia pela Chrome Web Store e conecte seu token de acesso.</p>
             </div>
             <div className="step-card">
               <div className="step-num">03</div>
@@ -233,6 +233,9 @@ export default async function Home() {
             <span className="logo-symbol">⚡</span> Sapienia
           </div>
           <div style={{ display: "flex", gap: "20px" }}>
+            <Link href="/central-de-ajuda" style={{ color: "var(--foreground-muted)", textDecoration: "none", fontSize: "0.875rem" }}>
+              Central de Ajuda
+            </Link>
             <Link href="/blog" style={{ color: "var(--foreground-muted)", textDecoration: "none", fontSize: "0.875rem" }}>
               Blog/Artigos
             </Link>

@@ -72,6 +72,9 @@ export default async function BlogPage() {
             <span className="logo-symbol">⚡</span> Sapienia
           </div>
           <div style={{ display: "flex", gap: "20px" }}>
+            <Link href="/central-de-ajuda" style={{ color: "var(--foreground-muted)", textDecoration: "none", fontSize: "0.875rem" }}>
+              Central de Ajuda
+            </Link>
             <Link href="/privacy" style={{ color: "var(--foreground-muted)", textDecoration: "none", fontSize: "0.875rem" }}>
               Política de Privacidade
             </Link>

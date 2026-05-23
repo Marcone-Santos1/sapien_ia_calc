@@ -449,16 +449,36 @@ export default function DashboardClient({ initialUser }: DashboardClientProps) {
               </div>
               <div>
                 <h2 className="dash-section-title">Instalar a Extensão</h2>
-                <p className="dash-section-desc">Configure em menos de 2 minutos</p>
+                <p className="dash-section-desc">Configure em menos de 1 minuto</p>
               </div>
             </div>
 
-            <div className="extension-steps">
+            <div className="extension-steps" style={{ marginBottom: "20px" }}>
               {[
-                { n: 1, text: <>Baixe a pasta <strong>extension</strong> do projeto para o seu computador.</> },
-                { n: 2, text: <>No Chrome, acesse <code>chrome://extensions</code> e ative o <strong>Modo do desenvolvedor</strong>.</> },
-                { n: 3, text: <>Clique em <strong>Carregar sem compactação</strong> e selecione a pasta <strong>extension</strong>.</> },
-                { n: 4, text: <>Abra a extensão, cole seu token acima e clique em <strong>Conectar Conta</strong>.</> },
+                {
+                  n: 1,
+                  text: (
+                    <>
+                      Adicione a extensão ao seu navegador diretamente da{" "}
+                      <a
+                        href="https://chromewebstore.google.com/detail/eacoblodcakhhomdekjoakcngdbiijkk"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "#fbbf24", textDecoration: "underline", fontWeight: "600" }}
+                      >
+                        Chrome Web Store
+                      </a>.
+                    </>
+                  ),
+                },
+                {
+                  n: 2,
+                  text: <>Clique no ícone da extensão (ou no menu de extensões 🧩) no topo do seu navegador.</>,
+                },
+                {
+                  n: 3,
+                  text: <>Abra a extensão, cole seu token de acesso acima e clique em <strong>Conectar Conta</strong>.</>,
+                },
               ].map(({ n, text }) => (
                 <div className="step-item" key={n}>
                   <span className="step-badge">{n}</span>
@@ -466,6 +486,17 @@ export default function DashboardClient({ initialUser }: DashboardClientProps) {
                 </div>
               ))}
             </div>
+
+            <a
+              href="https://chromewebstore.google.com/detail/eacoblodcakhhomdekjoakcngdbiijkk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+              style={{ width: "100%", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", textDecoration: "none" }}
+            >
+              <Icons.Puzzle />
+              Instalar da Chrome Web Store
+            </a>
           </div>
 
         </div>
