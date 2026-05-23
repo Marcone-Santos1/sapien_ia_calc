@@ -1,5 +1,5 @@
 // Configuração da API do SaaS
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "https://sapienia.calculadoraunivesp.com.br";
 
 // Variáveis Globais de Estado
 let userToken = "";
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } catch (error) {
       console.error("Erro ao validar token:", error);
-      alert("Não foi possível conectar ao servidor. Verifique se o SaaS está rodando em http://localhost:3000");
+      alert("Não foi possível conectar ao servidor. Verifique sua conexão de rede.");
       setConnectionStatus(false);
       showView(setupView);
     }
