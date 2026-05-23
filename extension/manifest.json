@@ -10,7 +10,7 @@
     "scripting"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "https://sapienia.calculadoraunivesp.com.br/*"
   ],
   "background": {
     "service_worker": "background.js"
