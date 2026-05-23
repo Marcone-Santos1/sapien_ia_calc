@@ -61,6 +61,7 @@ ENV DIRECT_URL=$DIRECT_URL
 # Variáveis fictícias (dummy) para passar pelo pre-rendering estático de APIs
 ENV GEMINI_API_KEY="dummy_key_build"
 
+RUN npx prisma generate
 RUN npm run build
 
 # ============================================
