@@ -142,7 +142,7 @@ export default async function HelpCenterPage() {
             <p style={{ color: "var(--foreground-muted)", maxWidth: "500px", margin: "0 auto 25px auto", lineHeight: "1.6" }}>
               Se você não encontrou a resposta que procurava ou teve algum problema com seus pagamentos, nossa equipe de suporte está pronta para ajudar.
             </p>
-            <a href="mailto:suporte@calculadoraunivesp.com.br" className="btn btn-primary">
+            <a href="mailto:ms5806166@gmail.com" className="btn btn-primary">
               Entrar em Contato por E-mail
             </a>
           </div>
