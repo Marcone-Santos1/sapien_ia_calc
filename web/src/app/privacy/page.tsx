@@ -22,7 +22,7 @@ export default async function PrivacyPolicy() {
           <section style={{ marginBottom: "24px" }}>
             <h2>1. Apresentação e Escopo</h2>
             <p>
-              Esta Política de Privacidade descreve como a plataforma <strong>Sapienia</strong> coletada, processa e protege as informações dos usuários ao utilizar nosso site e nossa extensão para o navegador Google Chrome (<strong>Sapienia - Resolutor de Questões IA</strong>).
+              Esta Política de Privacidade descreve como a plataforma <strong>Sapienia</strong> coleta, processa e protege as informações dos usuários ao utilizar nosso site e nossa extensão para o navegador Google Chrome (<strong>Sapienia - Resolutor de Questões IA</strong>).
             </p>
           </section>
 

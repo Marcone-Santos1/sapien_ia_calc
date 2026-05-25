@@ -39,6 +39,7 @@ export const metadata: Metadata = {
     title: "Sapienia - Tutor de IA Acadêmico e Resolutor de Questões",
     description: "Resolva qualquer questão de vestibular, concurso ou faculdade instantaneamente. Tire um print ou cole o enunciado e receba uma explicação passo a passo da nossa Inteligência Artificial.",
   },
+  // TODO: replace with real google site verification code
   verification: {
     google: "google-site-verification-placeholder", // Substituir pelo código real do console
   }
